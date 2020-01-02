@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="GearStyleKit.js"></script>
+    <script>
+        window.onload = function() {
+            GearStyleKit.drawGears('mainCanvas', 1);
+        };
+    </script>
+</head>
+<body style="margin: 0px;">
+    <canvas id="mainCanvas" width="240" height="200"></canvas>
+    
+    <form>
+    	<input type="range" id="angleRange" name="angle" min="0" max="360">
+    </form>
+    
+    <script>
+    	var range = document.getElementById("angleRange");
+    	
+    	range.oninput = function() {
+    		GearStyleKit.clearCanvas('mainCanvas');
+    		GearStyleKit.drawGears('mainCanvas', range.value);
+    	}
+    </script>
+</body>
+</html>
